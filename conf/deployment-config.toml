@@ -1,0 +1,138 @@
+[docker]
+  [docker.dockerConfig]
+    enable = true
+    name = "versao"
+    #registry = ''
+    tag = '1.0.0'
+    #buildImage = ''
+    #dockerHost = ''
+    #dockerCertPath = ''
+    baseImage = 'wso2/wso2micro-gw:3.0.2'
+    #enableDebug = ''
+    #debugPort = ''
+    #push = ''
+    #username = ''
+    #password = ''
+  [docker.dockerCopyFiles]
+    enable = true
+    [[docker.dockerCopyFiles.files]]
+        source = '/Users/joaoemilio/wso2/training/api-m/3.1.0/session-3/brasil/wso2am-micro-gw-toolkit-3.0.4/resources/conf/micro-gw.conf'
+        target = '/home/ballerina/conf/micro-gw.conf'
+        isBallerinaConf = true
+[kubernetes]
+  [kubernetes.kubernetesDeployment]
+    enable = false
+    #name = ''
+    #labels = '{"": ""}'
+    #replicas = ''
+    #enableLiveness = ''
+    #initialDelaySeconds = ''
+    #periodSeconds = ''
+    #livenessPort = ''
+    #imagePullPolicy = ''
+    #image = ''
+    #env = ''
+    #buildImage = ''
+    [kubernetes.kubernetesDeployment.copyFiles]
+        enable = false
+        [[kubernetes.kubernetesDeployment.copyFiles.files]]
+            source = ''
+            target = ''
+    #dockerHost = ''
+    #dockerCertPath = ''
+    #push = ''
+    #username = ''
+    #password = ''
+    #baseImage = ''
+    #singleYAML = ''
+  [kubernetes.kubernetesService]
+    enable = false
+    #name = ''
+    #labels = '{"": ""}'
+    #serviceType = ''
+    #port = ''
+  #[kubernetes.kubernetesServiceHttps]
+      #enable = false
+      #name = ''
+      #labels = '{"": ""}'
+      #serviceType = ''
+      #port = ''
+  #[kubernetes.kubernetesServiceHttp]
+      #enable = false
+      #name = ''
+      #labels = '{"": ""}'
+      #serviceType = ''
+      #port = ''
+  #[kubernetes.kubernetesServiceToken]
+      #enable = false
+      #name = ''
+      #labels = '{"": ""}'
+      #serviceType = ''
+      #port = ''
+  [kubernetes.kubernetesIngress]
+    enable = false
+    #name = ''
+    #labels = '{"", ""}'
+    #hostname = ''
+    #annotations = ''
+    #path = ''
+    #targetPath = ''
+    #ingressClass = ''
+  [kubernetes.secureKubernetesIngress]
+    enable = false
+    #name = ''
+    #labels = '{"": ""}'
+    #hostname = ''
+    #annotations = ''
+    #path = ''
+    #targetPath = ''
+    #ingressClass = ''
+    #keyStorePath = '${ballerina.home}/bre/security/ballerinaKeystore.p12'
+    #keyStorePassword = '$env{Keystore_Password}'
+  [kubernetes.kubernetesHpa]
+    enable = false
+    #name = ''
+    #labels = '{"": ""}'
+    #minReplicas = ''
+    #maxReplicas = ''
+    #cpuPrecentage = ''
+  [kubernetes.kubernetesSecret]
+    enable = false
+    #[[kubernetes.kubernetesSecret.secrets]]
+      #name = ''
+      #mountPath = ''
+      #readOnly = false
+      #data = ['']
+  [kubernetes.kubernetesConfigMap]
+    enable = false
+    ballerinaConf = 'path/to/micro-gw.conf'
+    #[[kubernetes.kubernetesConfigMap.configMaps]]
+      #name = ''
+      #mountPath = ''
+      #data = ['']
+      #readOnly = false
+  [kubernetes.kubernetesPersistentVolumeClaim]
+    enable = false
+    #name = ''
+    #mountPath = ''
+    #readOnly = ''
+    #accessMode = ''
+    #volumeClaimSize = ''
+  [kubernetes.kubernetesJob]
+    enable = false
+    #name = ''
+    #labels = '{"": ""}'
+    #restartPolicy = ''
+    #backoffLimit = ''
+    #activeDeadlineSeconds = ''
+    #schedule = ''
+    #imagePullPolicy = ''
+    #image = ''
+    #env = ''
+    #buildImage = ''
+    #dockerHost = ''
+    #dockerCertPath = ''
+    #push = ''
+    #username = ''
+    #password = ''
+    #baseImage = ''

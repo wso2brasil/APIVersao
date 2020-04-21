@@ -1,0 +1,26 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Versao API
+  license:
+    name: MIT
+servers:
+  - url: http://host.docker.internal:49090/
+x-wso2-basePath : /
+x-wso2-production-endpoints:
+  urls:
+    - http://host.docker.internal:39090
+
+paths:
+  /versao:
+    get:
+      x-wso2-production-endpoints:
+       urls:
+        - etcd (versao_endpoint, http://host.docker.internal:19090)
+      summary: Recuperar a versao da API
+      operationId: recuperar a versao da API
+      tags:
+        - etcd
+      responses:
+        '200':
+          description: um json com a versao da API
